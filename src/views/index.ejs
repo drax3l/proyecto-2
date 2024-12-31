@@ -3,13 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="/styles/main.css">
     <%- include('partials/head') %>
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+            color: #333;
+        }
+
+        /* Header con Imagen */
+        header {
+            background: linear-gradient(135deg, #6c63ff, #8e44ad);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2em;
+            gap: 2em;
+        }
+
+        header .header-text {
+            flex: 1;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0.2em 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 0.5em 0;
+        }
+
+        header .header-image {
+            flex: 0.4;
+        }
+
+        header .header-image img {
+            max-width: 100%;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contenedor General */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 1em;
+        }
+
+        section {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1.5em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1.5em;
+        }
+
+        section h2 {
+            color: #6c63ff;
+            margin-bottom: 1em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background: #333;
+            color: white;
+        }
+
+        footer a {
+            color: #6c63ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #8e44ad;
+        }
+    </style>
 </head>
 <body>
     <%- include('partials/navigation') %>
-    <h1>Hola Mundo</h1>
 
-    <%- include('partials/footer') %>
+    <!-- Header -->
+    <header>
+        <div class="header-text">
+            <h1>Bienvenido a Mi Portafolio</h1>
+            <p>Hola, mi nombre es Alex Jeanpier Quispe Sierra, soy un desarrollador web junior con experiencia en tecnologías modernas. Me encanta aprender nuevas herramientas y crear aplicaciones impactantes. También uso GitHub para gestionar mis proyectos y colaborar con otros desarrolladores.</p>
+        </div>
+        <div class="header-image">
+            <img src="/img/alex.jpeg" alt="Foto de Alex Jeanpier Quispe Sierra">
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>Sobre Mí</h2>
+            <p>Soy un desarrollador web junior con experiencia en tecnologías modernas y pasión por crear soluciones innovadoras. Me especializo en construir aplicaciones dinámicas y escalables mientras aprendo continuamente para mejorar mis habilidades.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Alex Jeanpier Quispe Sierra. Todos los derechos reservados.</p>
+        <p>Sígueme en <a href="https://github.com/" target="_blank">GitHub</a></p>
+    </footer>
 </body>
-</html> 
+</html>
