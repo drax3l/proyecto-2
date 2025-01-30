@@ -75,7 +75,15 @@
     </style>
 </head>
 <body>
-    <%- include('partials/navigation') %>
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+                <a href="/about">Sobre mi</a>
+                <a href="/contact">Contactanos</a>
+            </li>
+        </ul>
+    </nav>
 
     <!-- About Section -->
     <section id="about">
@@ -87,5 +95,6 @@
     </section>
 
     <%- include('partials/footer') %>
+    <%- include('partials/chatbot') %>
 </body>
 </html>

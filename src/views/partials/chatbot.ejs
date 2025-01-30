@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        #chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        #chatbot-logo {
+            width: 50px;
+            height: 50px;
+            background-image: url('/img/mi_logo.png'); /* Ruta a tu logo */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #4285F4; /* Borde del color de la página */
+        }
+
+        #chatbot-frame-container {
+            display: none;
+            width: 350px;
+            height: 430px;
+            transition: all 0.3s ease-in-out;
+            border: 2px solid #4285F4; /* Borde del color de la página */
+        }
+
+        #chatbot-frame-container.open {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #chatbot-frame-container.close {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    </style>
+</head>
+<body>
+    <div id="chatbot-container">
+        <div id="chatbot-logo" onclick="toggleChatbot()"></div>
+        <div id="chatbot-frame-container">
+            <iframe
+                allow="microphone;"
+                width="350"
+                height="430"
+                src="https://console.dialogflow.com/api-client/demo/embedded/bc3fffff-1a02-40d1-bb0f-9d1581da46c1">
+            </iframe>
+        </div>
+    </div>
+    <script>
+        function toggleChatbot() {
+            const chatbotFrameContainer = document.getElementById('chatbot-frame-container');
+            if (chatbotFrameContainer.classList.contains('open')) {
+                chatbotFrameContainer.classList.remove('open');
+                chatbotFrameContainer.classList.add('close');
+                setTimeout(() => {
+                    chatbotFrameContainer.style.display = 'none';
+                }, 300);
+            } else {
+                chatbotFrameContainer.style.display = 'block';
+                setTimeout(() => {
+                    chatbotFrameContainer.classList.remove('close');
+                    chatbotFrameContainer.classList.add('open');
+                }, 10);
+            }
+        }
+    </script>
+</body>
+</html>
